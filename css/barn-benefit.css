@@ -2,3 +2,15 @@
     float: none;
     margin: 0 auto;
 }
+
+#donationSlider .slider-selection {
+  background: #FF7000;
+}
+
+#donationSlider .slider-handle {
+    background: #FF7000;
+}
+
+.slider {
+    width: 100%;
+}
