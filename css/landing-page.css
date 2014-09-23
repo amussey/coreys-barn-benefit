@@ -24,6 +24,12 @@ h6 {
 .lead {
     font-size: 18px;
     font-weight: 400;
+    color: #fff;
+}
+
+.lead-lightbg {
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .intro-header {
@@ -31,7 +37,7 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/banner-top3-20darker.png) no-repeat center center;
+    background: url(../img/banner-top.png) no-repeat center center;
     background-size: cover;
 }
 
@@ -90,7 +96,7 @@ h6 {
 
 .content-section-a {
     padding: 50px 0;
-    background-color: #f8f8f8;
+    background-color: #701914;
 }
 
 .content-section-b {
@@ -100,6 +106,11 @@ h6 {
 }
 
 .section-heading {
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.section-heading-lightbg {
     margin-bottom: 30px;
 }
 
@@ -163,4 +174,17 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+
+.navbar-default {
+    background-color: #701914;
+    border-color: #a82119;
+}
+
+.navbar-default a.navbar-brand {
+    color: #C7B3B3;
+}
+
+.navbar-default a.navbar-brand:hover {
+    color: #C7B3B3;
 }
