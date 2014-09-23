@@ -30,6 +30,7 @@ h6 {
 .lead-lightbg {
     font-size: 18px;
     font-weight: 400;
+    color: #fff;
 }
 
 .intro-header {
@@ -101,8 +102,9 @@ h6 {
 
 .content-section-b {
     padding: 50px 0;
-    border-top: 1px solid #e7e7e7;
-    border-bottom: 1px solid #e7e7e7;
+    border-top: 1px solid #a82119;
+    border-bottom: 1px solid #a82119;
+    background-color: #872911; /*#7D3610; #993117; #9f4d2c;*/
 }
 
 .section-heading {
@@ -112,6 +114,7 @@ h6 {
 
 .section-heading-lightbg {
     margin-bottom: 30px;
+    color: #fff;
 }
 
 .section-heading-spacer {
@@ -123,7 +126,7 @@ h6 {
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: url(http://placekitten.com/1900/840) no-repeat center center;
+    background: url(../img/side-square-4-wide-20dark.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -182,9 +185,9 @@ p.copyright {
 }
 
 .navbar-default a.navbar-brand {
-    color: #C7B3B3;
+    color: #FFE5D7; /*#D69B7C;*/
 }
 
 .navbar-default a.navbar-brand:hover {
-    color: #C7B3B3;
+    color: #FFE5D7; /*#D69B7C;*/
 }
