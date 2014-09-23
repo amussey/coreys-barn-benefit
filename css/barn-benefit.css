@@ -14,3 +14,11 @@
 .slider {
     width: 100%;
 }
+
+a {
+    color: #FF7000;
+}
+
+a:hover {
+    color: #FF7000;
+}
