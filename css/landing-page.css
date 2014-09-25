@@ -64,6 +64,27 @@ h6 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 }
 
+.intro-message-thanks {
+    position: relative;
+    padding-top: 14%;
+    padding-bottom: 14%;
+}
+
+.intro-message-thanks > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 8em;
+    font-family: 'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive;
+}
+
+.intro-message-thanks > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+.intro-message-thanks > h4 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
 @media(max-width:767px) {
     .intro-message {
         padding-bottom: 15%;
@@ -71,6 +92,14 @@ h6 {
 
     .intro-message > h1 {
         font-size: 3em;
+    }
+
+    .intro-message-thanks {
+        padding-bottom: 15%;
+    }
+
+    .intro-message-thanks > h1 {
+        font-size: 5em;
     }
 
     ul.intro-social-buttons > li {
