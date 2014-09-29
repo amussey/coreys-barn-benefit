@@ -4,21 +4,20 @@ local PASSWORD = '<GMAIL PASSWORD>'
 local SERVER = 'smtp.gmail.com'
 local FROM_ADDRESS = USERNAME .. '@gmail.com'
 
+local uuid = require("amussey/lib/lua/webscriptio/uuid")
+
 if request.method ~= "POST" then
-    return 302, '', {Location='https://amussey.github.com/coreys-barn-benefit/'}
+    return 302, '', {Location='https://amussey.github.io/coreys-barn-benefit/'}
 end
 
 if storage.callbacks == nil then
     storage.callbacks = "{}"
     callbacks = {}
 else
-    storage.callbacks = json.parse(storage.callbacks)
+    callbacks = json.parse(storage.callbacks)
 end
 
 local callback = json.parse(request.form.token)
-
-table.insert(callbacks, callback)
-storage.callbacks = json.stringify(callbacks)
 
 local charge = http.request({
     method='post',
@@ -31,14 +30,25 @@ local charge = http.request({
         amount=callback.charge
     }})
 
+callback.uuid = uuid()
+
 if charge.statuscode == 200 then
+      table.insert(callbacks, callback)
+    storage.callbacks = json.stringify(callbacks)
+
     local lustache = require 'lustache'
     local response = http.request {
         url = 'https://amussey.github.io/coreys-barn-benefit/lua/email',
     }
+    local responseValues = {
+        ["name"]=callback.card.name,
+        ["address1"]=callback.card.address_line1,
+        ["address2"]=callback.card.address_city .. ", " .. callback.card.address_state .. "  " .. callback.card.address_zip,
+        ["address3"]=callback.card.address_country,
+        ["mailto"]=FROM_ADDRESS
+    }
 
-
-    emailbody = lustache:render(response.content, {["name"]=callback.card.name, ["mailto"]=FROM_ADDRESS})
+    emailbody = lustache:render(response.content, responseValues)
 
     email.send {
         server=SERVER, username=USERNAME, password=PASSWORD,
@@ -48,7 +58,7 @@ if charge.statuscode == 200 then
         html=emailbody
     }
 
-    return 302, '', {Location='https://amussey.github.com/coreys-barn-benefit/thankyou'}
+    return 302, '', {Location='https://amussey.github.io/coreys-barn-benefit/thankyou'}
 else
     return "Your charge for $" .. (callback.charge/100) .. " failed.  Please contact " .. FROM_ADDRESS .. "."
 end
