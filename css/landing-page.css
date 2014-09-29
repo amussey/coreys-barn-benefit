@@ -38,7 +38,16 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/banner-top.png) no-repeat center center;
+    background: url(../img/banner-top.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.thankyou-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../img/thankyou-top.jpg) no-repeat center center;
     background-size: cover;
 }
 
