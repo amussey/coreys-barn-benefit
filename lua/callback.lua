@@ -33,7 +33,7 @@ local charge = http.request({
 callback.uuid = uuid()
 
 if charge.statuscode == 200 then
-      table.insert(callbacks, callback)
+    table.insert(callbacks, callback)
     storage.callbacks = json.stringify(callbacks)
 
     local lustache = require 'lustache'
