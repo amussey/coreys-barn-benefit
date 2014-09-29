@@ -3,13 +3,12 @@ local USERNAME = '<GMAIL USERNAME>'
 local PASSWORD = '<GMAIL PASSWORD>'
 local SERVER = 'smtp.gmail.com'
 local FROM_ADDRESS = USERNAME .. '@gmail.com'
-local TO_ADDRESS = '<TO EMAIL ADDRESS>'
 
 if request.method ~= "POST" then
     return 302, '', {Location='https://amussey.github.com/coreys-barn-benefit/'}
 end
 
-if storage.callbacks ~= nil then
+if storage.callbacks == nil then
     storage.callbacks = "{}"
     callbacks = {}
 else
@@ -20,7 +19,6 @@ local callback = json.parse(request.form.token)
 
 table.insert(callbacks, callback)
 storage.callbacks = json.stringify(callbacks)
-
 
 local charge = http.request({
     method='post',
@@ -36,16 +34,16 @@ local charge = http.request({
 if charge.statuscode == 200 then
     local lustache = require 'lustache'
     local response = http.request {
-        url = 'https://amussey.github.io/coreys-barn-benefit/lua/email.html',
+        url = 'https://amussey.github.io/coreys-barn-benefit/lua/email',
     }
 
 
-    emailbody = lustache:render(response.content, {["name"]="Andrew", ["mailto"]=FROM_ADDRESS})
+    emailbody = lustache:render(response.content, {["name"]=callback.card.name, ["mailto"]=FROM_ADDRESS})
 
     email.send {
         server=SERVER, username=USERNAME, password=PASSWORD,
         from=FROM_ADDRESS,
-        to=TO_ADDRESS,
+        to=callback.email,
         subject='Corey\'s Barn Benefit: Donation received',
         html=emailbody
     }

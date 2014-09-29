@@ -127,9 +127,9 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-centered" style="margin-bottom:30px; font-align:center;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:30px; font-align:center;">
                     <a id="dvd"></a>
-                    <h2 style="color:#fff;">&nbsp;&nbsp;&nbsp;&nbsp;Donate for a Copy of the Video</h2>
+                    <center><h2 style="color:#fff;">Donate for a Copy of the Video</h2></center>
                 </div>
             </div>
             <div class="row">
@@ -142,10 +142,10 @@
             </div>
             <div class="row" style="margin-bottom:30px;">
                 <div class="col-lg-8 col-sm-6 col-xs-12" style="margin-top: 10px; margin-bottom: 10px;">
-                    <input id="ex1" data-slider-id='donationSlider' type="text" data-slider-min="10" data-slider-max="100" data-slider-step="1" data-slider-value="15"/>
+                    <input id="sliderDvd" data-slider-id='donationSlider' type="text" data-slider-min="10" data-slider-max="100" data-slider-step="1" data-slider-value="15"/>
                 </div>
                 <div class="col-lg-1 col-sm-2 col-xs-3" style="margin-top:3px; font-size: 22px; font-weight:bolder; color:#fff;">
-                    $<span id="ex1text">15</span>.00
+                    $<span id="sliderDvdText">15</span>.00
                 </div>
                 <div class="col-lg-3 col-sm-4 col-xs-9">
                     <button id="purchaseDvd" class="btn btn-block btn-lg btn-default">Purchase a DVD</button>
@@ -154,13 +154,13 @@
             </div>
             <div class="row" style="margin-bottom: 50px;">
                 <div class="col-lg-8 col-sm-6 col-xs-12" style="margin-top: 3px; margin-bottom: 10px;">
-                    <input id="ex1a" data-slider-id='donationSlider' type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="10"/>
+                    <input id="sliderDigital" data-slider-id='donationSlider' type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="10"/>
                 </div>
                 <div class="col-lg-1 col-sm-2 col-xs-3" style="font-size: 22px; font-weight:bolder; color:#fff;">
-                    $<span id="ex1atext">10</span>.00
+                    $<span id="sliderDigitalText">10</span>.00
                 </div>
                 <div class="col-lg-3 col-sm-4 col-xs-9">
-                    <button id="purchaseDvd2" class="btn btn-block btn-default">Purchase a Digital Download</button>
+                    <button id="purchaseDigital" class="btn btn-block btn-default">Purchase a Digital Download</button>
                 </div>
 
             </div>
@@ -211,25 +211,6 @@
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script src="js/bootstrap-slider.js"></script>
     <script src="js/dvd-payment.js"></script>
-    <script>
-    var ex1 = $('#ex1').slider({
-      formatter: function(value) {
-          $("#slider-value").html("$" + value);
-          return 'Current value: ' + value;
-      }
-    }).on('slide', function(e){
-      $("#ex1text").html(ex1.getValue());
-    }).data('slider');
-
-    var ex1a = $('#ex1a').slider({
-      formatter: function(value) {
-          $("#slider-value").html("$" + value);
-          return 'Current value: ' + value;
-      }
-    }).on('slide', function(e){
-      $("#ex1atext").html(ex1a.getValue());
-    }).data('slider');
-    </script>
 </body>
 
 </html>
