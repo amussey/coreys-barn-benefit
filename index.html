@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Andrew Mussey">
 
     <title>Corey Brown's Barn Benefit - DVD Coming Soon</title>
+
+    <!-- Redirect user if they aren't on HTTPS -->
+    <script>
+    var url = "https://amussey.github.io/coreys-barn-benefit/";
+    if (window.location.protocol == "http:") {
+        // window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+        window.location.href = url;
+    }
+    </script>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -184,6 +191,12 @@
                     <p class="copyright  small">Designed by <a href="http://blog.amussey.com">Andrew Mussey</a>, 2014.  Photos by Caitlin Turner and Brian James.</p>
                 </div>
             </div>
+        </div>
+        <div style="display:none;">
+            <form action="http://coreysbarnbenefit.webscript.io/callback" method="POST" id="send-donation" name="send-donation">
+                <input type="hidden" name="token" id="token" value="{}">
+                <input type="submit" value="" name="submit" id="submit">
+            </form>
         </div>
         <!-- /.container -->
 
