@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  var stripe_key = 'pk_live_26QOnVhJnfK7icuPzBcAi2iI';
+
   var sliderDigital = $('#sliderDigital').slider({
     formatter: function(value) {
         return 'Current value: ' + value;
@@ -8,7 +10,7 @@ $(document).ready(function() {
   }).data('slider');
 
   var handlerDigital = StripeCheckout.configure({
-    key: 'pk_test_nvnjjrdhvEU9gYUF7mNtbU2W',
+    key: stripe_key,
     image: 'img/corey.jpg',
     token: function(token) {
       token.order = "Digital Download"
