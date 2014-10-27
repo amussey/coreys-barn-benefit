@@ -42,9 +42,6 @@ if charge.statuscode == 200 then
     }
     local responseValues = {
         ["name"]=callback.card.name,
-        ["address1"]=callback.card.address_line1,
-        ["address2"]=callback.card.address_city .. ", " .. callback.card.address_state .. "  " .. callback.card.address_zip,
-        ["address3"]=callback.card.address_country,
         ["mailto"]=FROM_ADDRESS
     }
 
@@ -60,7 +57,7 @@ if charge.statuscode == 200 then
 
     return 302, '', {Location='https://amussey.github.io/coreys-barn-benefit/thankyou'}
 else
-    return "Your charge for $" .. (callback.charge/100) .. " failed.  Please contact " .. FROM_ADDRESS .. "."
+    return "Your charge for $" .. (callback.charge/100) .. " failed.  This could either be due to an issue with the payment processing or with the credit card information being entered incorrectly.  Please contact " .. FROM_ADDRESS .. "."
 end
 
 return callback
