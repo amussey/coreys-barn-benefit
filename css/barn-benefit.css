@@ -17,3 +17,19 @@ a {
 a:hover {
     color: #FF7000;
 }
+
+ol {
+    color: #e7e7e7;
+}
+
+.ii {
+    visibility: hidden;
+}
+
+.fa-bb {
+    margin-right:10px;
+}
+
+ol li small {
+    color: #B5B5B5;
+}
