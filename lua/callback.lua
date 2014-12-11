@@ -3,6 +3,7 @@ local USERNAME = '<GMAIL USERNAME>'
 local PASSWORD = '<GMAIL PASSWORD>'
 local SERVER = 'smtp.gmail.com'
 local FROM_ADDRESS = USERNAME .. '@gmail.com'
+local DOWNLOAD_URL = '<DOWNLOAD URL>'
 
 local uuid = require("amussey/lib/lua/webscriptio/uuid")
 
@@ -42,6 +43,7 @@ if charge.statuscode == 200 then
     }
     local responseValues = {
         ["name"]=callback.card.name,
+        ["download_url"]=DOWNLOAD_URL,
         ["mailto"]=FROM_ADDRESS
     }
 
